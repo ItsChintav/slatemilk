@@ -1,0 +1,211 @@
+/* ========== Base & Container ========== */
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background: #f9f9f9;
+  line-height: 1.6;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ========== Header & Nav ========== */
+header {
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-container {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 0;
+}
+.logo {
+  font-size: 1.8rem; letter-spacing: 2px; color: #6b4f4f;
+}
+.nav-links {
+  list-style: none; display: flex;
+}
+.nav-links li { margin-left: 1.5rem; }
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #333;
+  transition: color .3s;
+}
+.nav-links a:hover,
+.nav-links .active {
+  color: #6b4f4f;
+  border-bottom: 2px solid #6b4f4f;
+  padding-bottom: 2px;
+}
+.mobile-menu-icon {
+  display: none; font-size: 2rem; cursor: pointer;
+}
+
+/* ========== Hero Sections ========== */
+.hero {
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  height: 60vh;
+  color: #fff;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+}
+.hero::before {
+  content: "";
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+.hero .hero-content {
+  position: relative; z-index: 2;
+  padding: 0 1rem;
+}
+.hero-home {
+  background-image: url('images/homepage-lactose-free-chocolate-milk.jpg');
+}
+.hero-products {
+  background-image: url('images/flavors-slate-milk.jpg');
+}
+.hero-our-story {
+  background-image: url('images/benefits-fitness-slate-milk.jpg');
+}
+.hero-sustainability {
+  background-image: url('images/sustainability-ai-content.png');
+}
+.hero-recipes {
+  background-image: url('images/recipes-ai-content.png');
+}
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: .5rem;
+}
+.hero h2 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: .5px;
+}
+
+/* ========== Content & Headings ========== */
+.content {
+  padding: 3rem 0;
+  background: #fff;
+}
+.content h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #6b4f4f;
+}
+.content h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+  margin-bottom: .75rem;
+  color: #6b4f4f;
+}
+.content p {
+  margin-bottom: 1rem;
+}
+.content ul {
+  margin-left: 1.25rem;
+  list-style-type: disc;
+  margin-bottom: 1rem;
+}
+.content blockquote {
+  margin: 1rem 0;
+  padding: .75rem 1rem;
+  background: #f2f2f2;
+  border-left: 5px solid #6b4f4f;
+}
+
+/* ========== Footer ========== */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+/* Backlinks “Explore more” section */
+.page-links {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f2f2f2;      /* subtle grey background */
+  border-top: 2px solid #6b4f4f;  /* brand accent color */
+  text-align: center;
+  border-radius: 4px;
+}
+.page-links p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+.page-links a {
+  font-weight: 600;
+  color: #6b4f4f;
+  margin: 0 0.5rem;
+  transition: text-decoration 0.2s;
+}
+.page-links a:hover {
+  text-decoration: underline;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+  .mobile-menu-icon { display: block; }
+  .nav-links.active { display: flex; }
+  .hero { height: 50vh; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero h2 { font-size: 1.3rem; }
+}
+@media (max-width: 768px) {
+  /* Position the menu absolutely under the header */
+  .nav-links {
+    position: absolute;
+    top: 100%;      /* right beneath the header */
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #e0e0e0;
+    display: none;       /* hidden by default */
+    flex-direction: column;
+  }
+
+  /* Show it when .active is toggled */
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Remove left-margin on items, and add separators */
+  .nav-links li {
+    margin: 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  /* Make links full‑bleed tappable buttons */
+  .nav-links a {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+  }
+}
